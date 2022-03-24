@@ -1,0 +1,19 @@
+export const common = {
+  USERNAME: "Username",
+  ENTER_USERNAME: "Enter username",
+  PASSWORD: "Password",
+  ENTER_PASSWORD: "Enter password",
+  LOG_IN: "Log in",
+  LOGIN: "Login",
+  LOGOUT: "Logout",
+  FORGOT_PASSWORD: "Forgot password",
+  SEARCH: "Search",
+  ACTIVE: "Active",
+  PROMO: "Promo",
+  SHOW_DETAILS: "Show details",
+  UNAVAILABLE: "Unavailable",
+  HEADING_NOTFOUND_PRODUCT: "Ooops... it's empty here",
+  PARAGRAPH_NOTFOUND_PRODUCT: "There are no products on the list",
+};
+
+export default common;

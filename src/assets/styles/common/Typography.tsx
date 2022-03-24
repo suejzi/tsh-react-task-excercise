@@ -19,7 +19,16 @@ export const SecondaryHeading = styled.h2`
   color: #1a1b1d;
 `;
 
-export const PrimaryParagraph = styled.p`
+export const BigPrimaryParagraph = styled.p`
+  font-family: Nunito, sans-serif;
+  font-style: normal;
+  font-weight: 600;
+  font-size: 18px;
+  line-height: 24px;
+  color: #9194a5;
+`;
+
+export const SmallPrimaryParagraph = styled.p`
   font-family: Nunito, sans-serif;
   font-style: normal;
   font-weight: 600;
@@ -28,11 +37,16 @@ export const PrimaryParagraph = styled.p`
   color: #9194a5;
 `;
 
-export const SecondaryParagraph = styled.p`
+export const SmallSecondaryParagraph = styled.p`
   font-family: Nunito, sans-serif;
   font-style: normal;
   font-weight: 600;
-  font-size: 18px;
-  line-height: 24px;
-  color: #9194a5;
+  font-size: 14px;
+  line-height: 16px;
+  color: #1a1b1d;
+`;
+
+export const UnderlineLink = styled.a`
+  text-decoration: underline;
+  color: inherit;
 `;

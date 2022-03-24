@@ -1,4 +1,4 @@
-export const Colors = {
+export const ThemeColors = {
   blue: "#4460F7",
   darkBlue: "#2140E8",
   orange: "#F9A52B",
