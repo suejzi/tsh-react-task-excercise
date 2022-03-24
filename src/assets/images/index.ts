@@ -4,6 +4,7 @@ export const Icons = {
   arrowDown: require("./icons/arrowDown.svg"),
   arrowUp: require("./icons/arrowUp.svg"),
   briefcase: require("./icons/briefcase.svg"),
+  magnifyingGlass: require("./icons/magnifyingGlass.svg"),
 };
 
 export const Pictures = {

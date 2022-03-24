@@ -6,13 +6,27 @@ import Login from "../../organisms/form";
 const LoginTemplateWrapper = styled.div`
   display: flex;
   flex-direction: row;
+  height: 100vh;
+
+  & > div:first-child {
+    width: 42.5%;
+  }
+
+  & > div:last-child {
+    width: 57.5%;
+    position: relative;
+  }
 `;
 
 const LoginTemplate = () => {
   return (
     <LoginTemplateWrapper>
-      <ImageLogin />
-      <Login />
+      <div>
+        <ImageLogin />
+      </div>
+      <div>
+        <Login />
+      </div>
     </LoginTemplateWrapper>
   );
 };

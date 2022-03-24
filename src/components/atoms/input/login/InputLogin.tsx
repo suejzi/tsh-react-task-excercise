@@ -4,7 +4,6 @@ import { useTranslation } from "react-i18next";
 import { styled } from "@mui/material/styles";
 
 const Input = styled(TextField)`
-  max-width: 496px;
   width: 100%;
 
   input {
@@ -26,12 +25,13 @@ const Input = styled(TextField)`
 
 export interface InputLoginProps {
   placeholder?: string;
+  type?: string;
 }
 
-const InputLogin: FC<InputLoginProps> = ({ placeholder }) => {
+const InputLogin: FC<InputLoginProps> = ({ placeholder, type }) => {
   const { t } = useTranslation();
 
-  return <Input placeholder={t(`${placeholder}`)} />;
+  return <Input placeholder={t(`${placeholder}`)} type={type} />;
 };
 
 export default InputLogin;

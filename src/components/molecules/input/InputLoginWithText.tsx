@@ -18,12 +18,13 @@ export interface InputLoginWithTextProps extends InputLoginProps {
 const InputLoginWithText: FC<InputLoginWithTextProps> = ({
   placeholder,
   inputLabel,
+  type,
 }) => {
   const { t } = useTranslation();
   return (
     <InputWrapper>
       <SmallSecondaryParagraph>{t(inputLabel)}</SmallSecondaryParagraph>
-      <InputLogin placeholder={placeholder} />
+      <InputLogin placeholder={placeholder} type={type} />
     </InputWrapper>
   );
 };

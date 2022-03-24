@@ -10,7 +10,4 @@ const Template: ComponentStory<typeof LoginTemplate> = (args) => (
   <LoginTemplate />
 );
 export const Login = Template.bind({});
-Login.args = {
-  placeholder: "DUPA",
-  inputText: "DUPA",
-};
+Login.args = {};

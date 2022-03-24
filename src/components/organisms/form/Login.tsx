@@ -13,6 +13,20 @@ import { BlueButton } from "../../../assets/styles/common/Buttons";
 const LoginWrapper = styled.div`
   display: flex;
   flex-direction: column;
+  height: 100%;
+
+  header {
+    top: 54px;
+    left: 126px;
+    position: absolute;
+  }
+  main {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    height: 100%;
+    padding: 44px 195px 0 126px;
+  }
 `;
 
 const Login: FC = () => {
@@ -20,22 +34,27 @@ const Login: FC = () => {
 
   return (
     <LoginWrapper>
-      <SiteLogo />
-      <PrimaryHeading>{t("LOGIN")}</PrimaryHeading>
-      <InputLoginWithText
-        inputLabel={"USERNAME"}
-        placeholder={"ENTER_USERNAME"}
-      />
-      <InputLoginWithText
-        inputLabel={"PASSWORD"}
-        placeholder={"ENTER_PASSWORD"}
-      />
-      <BlueButton>{t("LOG_IN")}</BlueButton>
-      <SmallPrimaryParagraph>
-        <UnderlineLink href="https://www.google.com">
-          {t("FORGOT_PASSWORD")}?
-        </UnderlineLink>
-      </SmallPrimaryParagraph>
+      <header>
+        <SiteLogo />
+      </header>
+      <main>
+        <PrimaryHeading>{t("LOGIN")}</PrimaryHeading>
+        <InputLoginWithText
+          inputLabel={"USERNAME"}
+          placeholder={"ENTER_USERNAME"}
+        />
+        <InputLoginWithText
+          inputLabel={"PASSWORD"}
+          placeholder={"ENTER_PASSWORD"}
+          type="password"
+        />
+        <BlueButton>{t("LOG_IN")}</BlueButton>
+        <SmallPrimaryParagraph>
+          <UnderlineLink href="https://www.google.com">
+            {t("FORGOT_PASSWORD")}?
+          </UnderlineLink>
+        </SmallPrimaryParagraph>
+      </main>
     </LoginWrapper>
   );
 };

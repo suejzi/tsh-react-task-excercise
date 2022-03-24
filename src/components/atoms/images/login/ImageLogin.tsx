@@ -3,13 +3,12 @@ import styled from "styled-components";
 import { Pictures } from "../../../../assets/images";
 
 const Img = styled.img`
-  width: 43%;
+  width: 100%;
   height: 100%;
+  object-fit: cover;
 `;
 
 const ImageLogin: FC = ({}) => {
-  console.log(Pictures);
-
   return <Img src={Pictures.loginImg} />;
 };
 
