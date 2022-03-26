@@ -4,6 +4,10 @@ export const Icons = {
   arrowDown: require("./icons/arrowDown.svg"),
   arrowUp: require("./icons/arrowUp.svg"),
   briefcase: require("./icons/briefcase.svg"),
+  checked: require("./icons/checked.svg"),
+  close: require("./icons/close.svg"),
+  filledStar: require("./icons/filledStar.svg"),
+  transparentStar: require("./icons/transparentStar.svg"),
   magnifyingGlass: require("./icons/magnifyingGlass.svg"),
 };
 

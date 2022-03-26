@@ -12,5 +12,5 @@ const Template: ComponentStory<typeof HeaderProfile> = (args) => (
 );
 export const ProfileHeader = Template.bind({});
 ProfileHeader.args = {
-  isLogged: true,
+  isLogged: false,
 };

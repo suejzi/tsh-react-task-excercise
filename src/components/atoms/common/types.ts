@@ -1,3 +1,4 @@
-export interface ImgProps {
-  imgUrl: string;
+export interface ImageProps {
+  name: string;
+  image: string;
 }

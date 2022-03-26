@@ -4,7 +4,9 @@ import styled from "styled-components";
 import SiteLogo from "../../atoms/images/logo";
 import InputSearch from "../../atoms/input/search";
 import InputCheckbox from "../../atoms/input/checkbox";
-import HeaderProfile, { HeaderProfileProps } from "../profile/headerProfile";
+import HeaderProfile, {
+  HeaderProfileProps,
+} from "../../molecules/profile/headerProfile";
 import { SectionWrapper } from "../../../assets/styles/common/Layout";
 import { FormControl, FormGroup } from "@mui/material";
 

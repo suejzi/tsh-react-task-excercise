@@ -15,16 +15,16 @@ const api = async (urlArgPoint: string, objType?: string) => {
   }
 };
 
-async function getAllProducts(objType: "Products") {
+async function getAllProducts() {
   return api(BASE_URL.products, "Products");
 }
 
-async function getProduct(id: string) {
+async function getSingleProduct(id: string) {
   return api(`${BASE_URL.products}/${id}`, "Product");
 }
 
-async function getUser() {
+async function getUser(id: string) {
   return api(`${BASE_URL.users}/me`, "User");
 }
 
-export { getAllProducts, getProduct, getUser };
+export { getAllProducts, getSingleProduct, getUser };
