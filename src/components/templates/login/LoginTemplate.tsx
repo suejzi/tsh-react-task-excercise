@@ -8,25 +8,20 @@ const LoginTemplateWrapper = styled.div`
   flex-direction: row;
   height: 100vh;
 
-  & > div:first-child {
+  img {
     width: 42.5%;
   }
 
-  & > div:last-child {
+  & > div {
     width: 57.5%;
-    position: relative;
   }
 `;
 
-const LoginTemplate = () => {
+const LoginTemplate: FC = () => {
   return (
     <LoginTemplateWrapper>
-      <div>
-        <ImageLogin />
-      </div>
-      <div>
-        <Login />
-      </div>
+      <ImageLogin />
+      <Login />
     </LoginTemplateWrapper>
   );
 };

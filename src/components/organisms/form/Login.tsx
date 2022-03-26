@@ -14,6 +14,9 @@ const LoginWrapper = styled.div`
   display: flex;
   flex-direction: column;
   height: 100%;
+  max-width: 496px;
+  padding: 44px 195px 0 126px;
+  position: relative;
 
   header {
     top: 54px;
@@ -25,7 +28,6 @@ const LoginWrapper = styled.div`
     flex-direction: column;
     justify-content: center;
     height: 100%;
-    padding: 44px 195px 0 126px;
   }
 `;
 
