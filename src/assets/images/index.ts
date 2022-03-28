@@ -9,6 +9,7 @@ export const Icons = {
   filledStar: require("./icons/filledStar.svg"),
   transparentStar: require("./icons/transparentStar.svg"),
   magnifyingGlass: require("./icons/magnifyingGlass.svg"),
+  paginationDots: require("./icons/paginationDots.svg"),
 };
 
 export const Pictures = {

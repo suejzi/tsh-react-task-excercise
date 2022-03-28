@@ -12,7 +12,7 @@ export const BlueButton = styled(Button)`
   line-height: 16px;
   text-align: center;
   color: #ffffff;
-  padding: 16px 81.5px;
+  padding: 16px 0;
   text-transform: capitalize;
 
   &:hover {
@@ -23,6 +23,7 @@ export const BlueButton = styled(Button)`
   &:disabled {
     background: #9194a5;
     border-radius: 4px;
+    color: #fff;
   }
 `;
 
@@ -31,7 +32,7 @@ export const WhiteButton = styled(Button)`
   background: #ffffff;
   border-radius: 4px;
   border: 1px solid #4460f7;
-  padding: 11px 24px;
+  padding: 11px 0;
   font-style: normal;
   font-weight: 600;
   font-size: 14px;
@@ -49,6 +50,7 @@ export const WhiteButton = styled(Button)`
   &:disabled {
     color: #9194a5;
     border: 1px solid #9194a5;
+    color: #fff;
   }
 `;
 
