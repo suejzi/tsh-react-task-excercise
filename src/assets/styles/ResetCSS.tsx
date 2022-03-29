@@ -105,6 +105,11 @@ const ResetCSS = createGlobalStyle`
   }
   body {
     line-height: 1;
+		height: 100vh;
+		
+		& > div {
+			height: 100vh;
+		}
   }
   ol,
   ul {
@@ -124,7 +129,7 @@ const ResetCSS = createGlobalStyle`
   table {
     border-collapse: collapse;
     border-spacing: 0;
-  }
+  },
 `;
 
 export default ResetCSS;

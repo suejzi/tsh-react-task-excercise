@@ -1,28 +1,23 @@
-import React, { FC } from "react";
-import styled from "styled-components";
+import React, { FC, useState } from "react";
 import Header from "../../organisms/header";
 import ProductList from "../../organisms/productList";
+import { ProductListProps } from "../../organisms/productList";
+import {
+  LoadingSpinner,
+  TemplateWrapper,
+} from "../../../assets/styles/common/Layout";
+const ProductTemplate: FC<ProductListProps> = ({ items, meta, links }) => {
+  const [searchParam, setSearchParam] = useState<string>("");
 
-const LoginTemplateWrapper = styled.div`
-  display: flex;
-  flex-direction: row;
-  height: 100vh;
-
-  img {
-    width: 42.5%;
-  }
-
-  & > div {
-    width: 57.5%;
-  }
-`;
-
-const ProductTemplate: FC = () => {
   return (
-    <LoginTemplateWrapper>
+    <TemplateWrapper>
       <Header isLogged={false} />
-      <ProductList items={} meta={} links={} />
-    </LoginTemplateWrapper>
+      {items ? (
+        <ProductList items={items} meta={meta} links={links} />
+      ) : (
+        <LoadingSpinner />
+      )}
+    </TemplateWrapper>
   );
 };
 

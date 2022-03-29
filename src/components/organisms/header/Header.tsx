@@ -7,13 +7,16 @@ import InputCheckbox from "../../atoms/input/checkbox";
 import HeaderProfile, {
   HeaderProfileProps,
 } from "../../molecules/profile/headerProfile";
-import { SectionWrapper } from "../../../assets/styles/common/Layout";
+import {
+  SectionWrapper,
+  OrganismWrapper,
+} from "../../../assets/styles/common/Layout";
 import { FormControl, FormGroup } from "@mui/material";
 
 const HeaderWrapper = styled.div`
   display: flex;
   flex-direction: row;
-  padding: 48px 0;
+  padding: 42px 0;
   width: 100%;
   align-items: center;
 
@@ -22,11 +25,11 @@ const HeaderWrapper = styled.div`
     margin-left: 105px;
     width: 100%;
     div {
-      margin-right: 24px;
+      margin-right: 31px;
     }
 
     label {
-      margin-right: 32px;
+      margin-right: 37px;
     }
 
     @media only screen and (max-width: 768px) {
@@ -52,19 +55,21 @@ const Header: FC<HeaderProps> = ({ isLogged }) => {
   const { t } = useTranslation();
 
   return (
-    <SectionWrapper>
-      <HeaderWrapper>
-        <SiteLogo />
-        <FormControl className="header-input__wrapper">
-          <InputSearch placeholder={t("SEARCH")} />
-          <FormGroup row>
-            <InputCheckbox label={t("ACTIVE")} />
-            <InputCheckbox label={t("PROMO")} />
-          </FormGroup>
-        </FormControl>
-        <HeaderProfile isLogged={isLogged} />
-      </HeaderWrapper>
-    </SectionWrapper>
+    <OrganismWrapper bgColor="white">
+      <SectionWrapper>
+        <HeaderWrapper>
+          <SiteLogo />
+          <FormControl className="header-input__wrapper">
+            <InputSearch placeholder={t("SEARCH")} />
+            <FormGroup row>
+              <InputCheckbox label={t("ACTIVE")} />
+              <InputCheckbox label={t("PROMO")} />
+            </FormGroup>
+          </FormControl>
+          <HeaderProfile isLogged={isLogged} />
+        </HeaderWrapper>
+      </SectionWrapper>
+    </OrganismWrapper>
   );
 };
 

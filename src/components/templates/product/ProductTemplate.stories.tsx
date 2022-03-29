@@ -1,16 +1,16 @@
 import { ComponentStory, ComponentMeta } from "@storybook/react";
-import ProductList from "./ProductList";
+import ProductTemplate from "./ProductTemplate";
 
 export default {
-  title: "organisms/Product/List",
-  component: ProductList,
-} as ComponentMeta<typeof ProductList>;
+  title: "templates/Product Template",
+  component: ProductTemplate,
+} as ComponentMeta<typeof ProductTemplate>;
 
-const Template: ComponentStory<typeof ProductList> = (args) => (
-  <ProductList {...args} />
+const Template: ComponentStory<typeof ProductTemplate> = (args) => (
+  <ProductTemplate {...args} />
 );
-export const List = Template.bind({});
-List.args = {
+export const Product = Template.bind({});
+Product.args = {
   meta: {
     totalItems: 100,
     itemCount: 100,

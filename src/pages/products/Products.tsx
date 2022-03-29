@@ -1,16 +1,19 @@
-import React from "react";
-import { Link } from "react-router-dom";
+import React, { FC, useEffect } from "react";
+import { useProducts } from "../../utils/hooks/useProducts";
+import ProductTemplate from "../../components/templates/product";
 
-import { AppRoute } from "routes/AppRoute.enum";
-import { PrimaryHeading } from "../../assets/styles/common/Typography";
-import { useTranslation } from "react-i18next";
+export const Products: FC = () => {
+  const { productsList, fetchAllProducts } = useProducts();
 
-export const Products = () => {
-  const { t } = useTranslation();
+  useEffect(() => {
+    fetchAllProducts();
+  }, [fetchAllProducts]);
+
   return (
-    <>
-      <PrimaryHeading>{t("USERNAME")}</PrimaryHeading>
-      <Link to={AppRoute.Login}> Login </Link>
-    </>
+    <ProductTemplate
+      items={productsList.items}
+      meta={productsList.meta}
+      links={productsList.links}
+    />
   );
 };

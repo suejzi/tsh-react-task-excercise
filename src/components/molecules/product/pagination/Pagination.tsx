@@ -1,42 +1,32 @@
 import styled from "styled-components";
 import { Icons } from "../../../../assets/images";
 import { useTranslation } from "react-i18next";
+import {
+  SecondaryTextButton,
+  TextButton,
+} from "../../../../assets/styles/common/Buttons";
 
 export const PaginationContainer = styled.div`
   display: flex;
   align-items: center;
-  justify-content: flex-end;
-
-  .pageCard {
-    height: 36px;
-    padding: 0 15px;
-    background: transparent;
-    border: 1px solid #b7bcce;
-    box-sizing: border-box;
-    border-radius: 4px;
-    margin: 0 6px;
-    color: #b9bdcf;
-    cursor: pointer;
-
-    &:not([disabled]):hover {
-      border: 1px solid #1e86ff;
-      color: #1e86ff;
-    }
-  }
+  justify-content: center;
+  margin-top: 34px;
 
   .pageCard.active {
-    background: #1e86ff;
-    border: 1px solid #1e86ff;
-    color: #fff;
+    color: #4460f7;
   }
+`;
+
+export const PaginationNumbersWrapper = styled.div`
+  display: flex;
+  flex-direction: row;
+  margin: 0 23px;
 `;
 
 export const MorePaginationIconContainer = styled.div`
   display: flex;
-  align-items: center;
-  justify-content: flex-end;
-  height: 36px;
-  width: 36px;
+  align-items: end;
+  padding: 8px 6px;
 `;
 
 interface PaginationProps {
@@ -84,17 +74,15 @@ const Pagination = ({
     }
   };
 
-  console.log(getPageRange(currentPage, pageCount));
-
   const renderPageRangeButtons = () =>
     getPageRange(currentPage, pageCount).map((page: number) => (
-      <button
+      <SecondaryTextButton
         key={page}
         className={page === currentPage ? `pageCard active` : `pageCard`}
         onClick={() => setCurrentPage(page)}
       >
         {page}
-      </button>
+      </SecondaryTextButton>
     ));
 
   const renderInitialButtons = (initNum: number, maxInitNumber: number) => {
@@ -104,61 +92,57 @@ const Pagination = ({
     }
 
     return numberArr.map((pageNumber: number) => (
-      <button
+      <SecondaryTextButton
         key={pageNumber}
         className={currentPage === pageNumber ? `pageCard active` : `pageCard`}
         onClick={() => setCurrentPage(pageNumber)}
       >
         {pageNumber}
-      </button>
+      </SecondaryTextButton>
     ));
   };
 
   const paginationDots = () =>
     pageCount >= 6 && (
-      <MorePaginationIconContainer
-        style={{
-          height: "36px",
-          width: "36px",
-        }}
-      >
+      <MorePaginationIconContainer>
         <img src={Icons.paginationDots.default} />
       </MorePaginationIconContainer>
     );
 
   return (
     <PaginationContainer>
-      <button
-        className="pageCard"
+      <TextButton
         onClick={() => {
           setCurrentPage(1);
         }}
         disabled={currentPage <= 1}
       >
         {t(`First`)}
-      </button>
-      {currentPage >= pageCount - 2 && pageCount > 6 && (
-        <>
-          {renderInitialButtons(1, 3)}
-          {paginationDots()}
-        </>
-      )}
-      <>{renderPageRangeButtons()}</>
-      {currentPage < pageCount - 2 && pageCount > 6 && (
-        <>
-          {paginationDots()}
-          {renderInitialButtons(pageCount - 2, pageCount)}
-        </>
-      )}
-      <button
-        className="pageCard"
+      </TextButton>
+      <PaginationNumbersWrapper>
+        {currentPage >= pageCount - 2 && pageCount > 6 && (
+          <>
+            {renderInitialButtons(1, 3)}
+            {paginationDots()}
+          </>
+        )}
+        <>{renderPageRangeButtons()}</>
+        {currentPage < pageCount - 2 && pageCount > 6 && (
+          <>
+            {paginationDots()}
+            {renderInitialButtons(pageCount - 2, pageCount)}
+          </>
+        )}
+      </PaginationNumbersWrapper>
+      <TextButton
         onClick={() => {
           setCurrentPage(pageCount);
         }}
         disabled={currentPage === pageCount}
       >
+        {" "}
         {t(`Last`)}
-      </button>
+      </TextButton>
     </PaginationContainer>
   );
 };

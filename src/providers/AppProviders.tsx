@@ -11,13 +11,11 @@ import { ProductProvider } from "../utils/context/Context";
 export const AppProviders: FC = ({ children }) => (
   <I18nextProvider i18n={i18n}>
     <ThemeProvider theme={ThemeColors}>
-      <ResetCSS>
-        <GlobalStyle>
-          <ProductProvider>
-            <Router>{children}</Router>
-          </ProductProvider>
-        </GlobalStyle>
-      </ResetCSS>
+      <ResetCSS />
+      <GlobalStyle />
+      <ProductProvider>
+        <Router>{children}</Router>
+      </ProductProvider>
     </ThemeProvider>
   </I18nextProvider>
 );

@@ -10,6 +10,7 @@ export const Icons = {
   transparentStar: require("./icons/transparentStar.svg"),
   magnifyingGlass: require("./icons/magnifyingGlass.svg"),
   paginationDots: require("./icons/paginationDots.svg"),
+  checkboxIcon: require("./icons/checkboxIcon.svg"),
 };
 
 export const Pictures = {

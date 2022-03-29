@@ -16,13 +16,21 @@ const SingleProductWrapper = styled.div`
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
+
+  & > img {
+    border-top-left-radius: 8px;
+    border-top-right-radius: 8px;
+  }
 `;
 
 const DescriptionWrapper = styled.div`
-  padding: 24px 16px;
+  padding: 18px 16px;
   display: flex;
   flex-direction: column;
-  height: 100%;
+  height: 195px;
+  background-color: #fff;
+  border-bottom-left-radius: 8px;
+  border-bottom-right-radius: 8px;
 
   .lower-col,
   .upper-col {
@@ -30,8 +38,22 @@ const DescriptionWrapper = styled.div`
     flex-direction: column;
   }
 
+  .upper-col {
+    h2 {
+      margin-bottom: 8px;
+    }
+  }
+
   .lower-col {
     margin-top: auto;
+
+    & > span {
+      margin-bottom: 16px;
+    }
+
+    & > button {
+      margin-bottom: 7px;
+    }
   }
 `;
 
@@ -40,6 +62,7 @@ const PromoParagraph = styled(SmallPrimaryParagraph)`
   background-color: #f9a52b;
   padding: 4px 17px 4px 16px;
   position: absolute;
+  margin-top: 16px;
 `;
 
 const SingleProduct: FC<SingleProductProps> = ({

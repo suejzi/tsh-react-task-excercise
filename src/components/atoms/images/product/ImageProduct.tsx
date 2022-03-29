@@ -5,14 +5,14 @@ import { ImageProps, ImageType } from "../../common/types";
 const Img = styled.img<ImageType>`
   object-fit: cover;
   height: ${(props) =>
-    props.imageType === "productList"
-      ? "192px"
+    props.imageType === "product"
+      ? "169px"
       : props.imageType === "modal"
-      ? "400px"
+      ? "350px"
       : "auto"};
   width: 100%;
   opacity: ${(props) =>
-    !props.active && props.imageType === "productList" && "0.5"};
+    !props.active && props.imageType === "product" && "0.5"};
 `;
 
 const ImageProduct: FC<ImageProps> = ({ name, image, imageType, active }) => {

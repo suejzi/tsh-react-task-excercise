@@ -11,7 +11,9 @@ export const AppRoutes = () => {
     <Switch>
       <Route path={AppRoute.Home} exact component={Products} />
       <Route path={AppRoute.Login} component={Login} />
-
+      <Route path="*">
+        <div>Test</div>
+      </Route>
       <Redirect to={AppRoute.Home} />
     </Switch>
   );

@@ -19,6 +19,15 @@ export const SecondaryHeading = styled.h2`
   color: #1a1b1d;
 `;
 
+export const TertiaryHeading = styled.h2`
+  font-family: Nunito, sans-serif;
+  font-style: normal;
+  font-weight: 600;
+  font-size: 24px;
+  line-height: 40px;
+  color: #1a1b1d;
+`;
+
 export const BigPrimaryParagraph = styled.p`
   font-family: Nunito, sans-serif;
   font-style: normal;

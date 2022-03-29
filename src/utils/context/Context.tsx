@@ -1,19 +1,21 @@
 import React, { FC } from "react";
 import * as apiClient from "../api/api";
 import { useProductsState } from "../hooks/useProductsState";
+import { resolveAny } from "dns";
 
 interface IProductContext {
-  productsList: object[];
-  singleProduct: Map<any, any>;
+  productsList: any;
+  fetchAllProducts: any;
 }
 
-const ProductContext = React.createContext<IProductContext>({
-  productsList: [],
-  singleProduct: new Map(),
+export const ProductContext = React.createContext<IProductContext>({
+  productsList: {},
+  fetchAllProducts: Promise,
 });
 
 export const ProductProvider: FC = ({ children }) => {
   const productState = useProductsState(apiClient);
+
   return (
     <ProductContext.Provider value={productState}>
       {children}

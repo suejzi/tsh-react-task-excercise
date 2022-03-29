@@ -1,5 +1,7 @@
 import React, { FC } from "react";
 import styled from "styled-components";
+import ImageLogin from "../../atoms/images/login";
+import Login from "../../organisms/form";
 
 const LoginTemplateWrapper = styled.div`
   display: flex;
@@ -16,7 +18,12 @@ const LoginTemplateWrapper = styled.div`
 `;
 
 const LoginTemplate: FC = () => {
-  return <LoginTemplateWrapper></LoginTemplateWrapper>;
+  return (
+    <LoginTemplateWrapper>
+      <ImageLogin />
+      <Login />
+    </LoginTemplateWrapper>
+  );
 };
 
 export default LoginTemplate;

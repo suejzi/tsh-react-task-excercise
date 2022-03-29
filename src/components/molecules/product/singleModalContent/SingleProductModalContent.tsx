@@ -3,8 +3,8 @@ import { useTranslation } from "react-i18next";
 import styled from "styled-components";
 import ImageProduct from "../../../atoms/images/product";
 import {
-  SecondaryHeading,
-  SmallPrimaryParagraph,
+  TertiaryHeading,
+  BigPrimaryParagraph,
 } from "../../../../assets/styles/common/Typography";
 import CloseIcon from "@mui/icons-material/Close";
 import { ImageProps } from "../../../atoms/common/types";
@@ -12,43 +12,54 @@ import { ImageProps } from "../../../atoms/common/types";
 const ModalWrapper = styled.div`
   display: flex;
   flex-direction: column;
-  width: 100%;
   max-width: 600px;
-  margin: auto;
+  width: 100%;
   position: absolute;
-  justify-content: center;
-  height: 100%;
-  left: 0; right: 0;
-}
+  margin: auto;
+  left: 0;
+  right: 0;
+  height: fit-content;
+  bottom: 0;
+  top: 0;
 
   .upper-modal-col {
     position: relative;
+    height: 350px;
     svg {
       position: absolute;
-      top: 0; right: 0;
+      top: 19px;
+      right: 19px;
+      cursor: pointer;
     }
     img {
-      border-top-left-radius: 8px;
-      border-top-right-radius: 8px;
+      border-radius: 8px;
     }
   }
 
-
   .lower-modal-col {
-    padding: 32px 24px 56px 24px;
+    margin-top: -7px;
+    padding: 0 32px;
     background-color: #fff;
     border-bottom-left-radius: 8px;
     border-bottom-right-radius: 8px;
+
+    h2 {
+      margin-top: 38px;
+    }
+
+    p {
+      margin: 10px 0 56px 0;
+    }
   }
-  
+
   .close-icon {
     padding: 0;
     border-radius: 0;
-    
+
     img {
       height: 14px;
       width: 14px;
-      
+    }
   }
 `;
 
@@ -72,8 +83,8 @@ const SingleProductModalContent: FC<SingleModalProps> = ({
         <ImageProduct name={name} image={image} imageType="modal" />
       </div>
       <div className="lower-modal-col">
-        <SecondaryHeading>{name}</SecondaryHeading>
-        <SmallPrimaryParagraph>{description}</SmallPrimaryParagraph>
+        <TertiaryHeading>{name}</TertiaryHeading>
+        <BigPrimaryParagraph>{description}</BigPrimaryParagraph>
       </div>
     </ModalWrapper>
   );

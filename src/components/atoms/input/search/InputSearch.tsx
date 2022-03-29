@@ -16,17 +16,17 @@ const Input = styled(TextField)`
   input {
     padding: 16px;
     background: #fff;
-  }
-
-  fieldset {
-    border: 1px solid #e0e2ea;
-    border-radius: 8px;
     font-family: Nunito, sans-serif;
     font-style: normal;
     font-weight: 600;
     font-size: 14px;
     line-height: 16px;
-    color: #9194a5;
+    color: #1a1b1d;
+  }
+
+  fieldset {
+    border: 1px solid #e0e2ea;
+    border-radius: 8px;
   }
 `;
 

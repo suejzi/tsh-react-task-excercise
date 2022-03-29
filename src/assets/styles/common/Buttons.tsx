@@ -12,7 +12,7 @@ export const BlueButton = styled(Button)`
   line-height: 16px;
   text-align: center;
   color: #ffffff;
-  padding: 16px 0;
+  padding: 10px 0;
   text-transform: capitalize;
 
   &:hover {
@@ -63,8 +63,21 @@ export const TextButton = styled(Button)`
   color: #1a1b1d;
   text-transform: capitalize;
   padding: 0;
+  min-width: auto;
 
   &:hover {
     background-color: unset;
   }
+`;
+
+export const SecondaryTextButton = styled(Button)`
+  font-family: Nunito, sans-serif;
+  font-style: normal;
+  font-weight: 600;
+  font-size: 14px;
+  line-height: 16px;
+  text-align: center;
+  min-width: auto;
+
+  color: #1a1b1d;
 `;

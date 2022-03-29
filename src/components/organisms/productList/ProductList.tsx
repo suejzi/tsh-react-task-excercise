@@ -2,13 +2,17 @@ import React, { FC, useMemo, useState } from "react";
 import styled from "styled-components";
 import SingleProduct from "../../molecules/product/single";
 import { SingleProductProps } from "../../molecules/common/types";
-import { SectionWrapper } from "../../../assets/styles/common/Layout";
+import {
+  SectionWrapper,
+  OrganismWrapper,
+} from "../../../assets/styles/common/Layout";
 import Pagination from "../../molecules/product/pagination/Pagination";
 
 const ProductListWrapper = styled.div`
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
+  margin-top: 40px;
 
   & > div {
     margin: 16px 12px;
@@ -86,14 +90,21 @@ const ProductList: FC<ProductListProps> = ({ items, meta, links }) => {
   );
 
   return (
-    <SectionWrapper>
-      <Pagination
-        currentPage={page}
-        pageCount={numberOfPages}
-        setCurrentPage={setPage}
-      />
-      <ProductListWrapper>{Products}</ProductListWrapper>
-    </SectionWrapper>
+    <OrganismWrapper
+      bgColor="gray"
+      style={{
+        height: "100%",
+      }}
+    >
+      <SectionWrapper>
+        <ProductListWrapper>{Products}</ProductListWrapper>
+        <Pagination
+          currentPage={page}
+          pageCount={numberOfPages}
+          setCurrentPage={setPage}
+        />
+      </SectionWrapper>
+    </OrganismWrapper>
   );
 };
 
