@@ -8,12 +8,22 @@ const LoginTemplateWrapper = styled.div`
   flex-direction: row;
   height: 100vh;
 
-  img {
+  & > img {
     width: 42.5%;
   }
 
   & > div {
     width: 57.5%;
+  }
+
+  @media only screen and (max-width: 768px) {
+    & > img {
+      display: none;
+    }
+
+    & > div {
+      width: 100%;
+    }
   }
 `;
 

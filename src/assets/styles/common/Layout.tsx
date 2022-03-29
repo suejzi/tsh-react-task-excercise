@@ -11,6 +11,10 @@ export const TemplateWrapper = styled.div`
 export const OrganismWrapper = styled.div<OrganismWrapperType>`
   background-color: ${(props) =>
     props.bgColor === "gray" ? "#F0F1F5" : "#FFFFFF"};
+
+  @media only screen and (max-width: 1272px) {
+    padding: 0 24px;
+  }
 `;
 
 export const SectionWrapper = styled.section`
@@ -18,9 +22,6 @@ export const SectionWrapper = styled.section`
   max-width: 1224px;
   padding: 0;
   width: 100%;
-  @media only screen and (max-width: 768px) {
-    padding: 24px 0;
-  }
 `;
 
 export const LoadingSpinner = styled(CircularProgress)`

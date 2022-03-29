@@ -11,6 +11,10 @@ const Input = styled(TextField)`
 
   & > div {
     width: 100%;
+
+    img {
+      margin-right: 4px;
+    }
   }
 
   input {

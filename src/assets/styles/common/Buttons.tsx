@@ -39,6 +39,7 @@ export const WhiteButton = styled(Button)`
   line-height: 16px;
   text-align: center;
   text-transform: capitalize;
+  min-width: 88px;
   color: #4460f7;
 
   &:hover {

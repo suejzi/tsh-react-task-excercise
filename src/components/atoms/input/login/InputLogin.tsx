@@ -5,21 +5,21 @@ import { styled } from "@mui/material/styles";
 
 const Input = styled(TextField)`
   width: 100%;
-
+  //margin-top: 14px;
   input {
-    padding: 16px;
+    padding: 15px;
     background: #fff;
-  }
-
-  fieldset {
-    border: 1px solid #e0e2ea;
-    border-radius: 8px;
     font-family: Nunito, sans-serif;
     font-style: normal;
     font-weight: 600;
     font-size: 14px;
     line-height: 16px;
     color: #9194a5;
+  }
+
+  fieldset {
+    border: 1px solid #e0e2ea;
+    border-radius: 8px;
   }
 `;
 

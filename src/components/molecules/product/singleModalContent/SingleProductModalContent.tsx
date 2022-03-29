@@ -22,6 +22,11 @@ const ModalWrapper = styled.div`
   bottom: 0;
   top: 0;
 
+  @media only screen and (max-width: 768px) {
+    width: auto;
+    padding: 0 24px;
+  }
+
   .upper-modal-col {
     position: relative;
     height: 350px;

@@ -8,7 +8,11 @@ const Img = styled.img`
 `;
 
 const SiteLogo: FC = () => {
-  return <Img src={Logo} />;
+  return (
+    <a href="/">
+      <Img src={Logo} />{" "}
+    </a>
+  );
 };
 
 export default SiteLogo;

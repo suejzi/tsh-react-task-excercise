@@ -10,7 +10,7 @@ const ProductTemplate: FC<ProductListProps> = ({ items, meta, links }) => {
   const [searchParam, setSearchParam] = useState<string>("");
 
   return (
-    <TemplateWrapper>
+    <TemplateWrapper style={{ height: "100vh", backgroundColor: "#F0F1F5" }}>
       <Header isLogged={false} />
       {items ? (
         <ProductList items={items} meta={meta} links={links} />

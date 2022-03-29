@@ -13,21 +13,47 @@ import { BlueButton } from "../../../assets/styles/common/Buttons";
 const LoginWrapper = styled.div`
   display: flex;
   flex-direction: column;
-  height: 100%;
   max-width: 496px;
-  padding: 44px 195px 0 126px;
+  padding: 0 126px;
   position: relative;
 
-  header {
+  .logo-section {
     top: 54px;
     left: 126px;
     position: absolute;
   }
-  main {
+  .login-section {
     display: flex;
     flex-direction: column;
     justify-content: center;
     height: 100%;
+    margin-top: 112px;
+    h1 {
+      margin-bottom: 30px;
+    }
+
+    div {
+      p {
+        margin-bottom: 5px;
+      }
+
+      div {
+        margin-bottom: 12px;
+      }
+    }
+
+    button {
+      padding: 15px 0;
+      margin: 30px 0 20px 0;
+    }
+  }
+
+  @media only screen and (max-width: 1200px) {
+    padding: 0 24px;
+
+    .logo-section {
+      left: 24px;
+    }
   }
 `;
 
@@ -36,10 +62,10 @@ const Login: FC = () => {
 
   return (
     <LoginWrapper>
-      <header>
+      <div className="logo-section">
         <SiteLogo />
-      </header>
-      <main>
+      </div>
+      <div className="login-section">
         <PrimaryHeading>{t("LOGIN")}</PrimaryHeading>
         <InputLoginWithText
           inputLabel={"USERNAME"}
@@ -56,7 +82,7 @@ const Login: FC = () => {
             {t("FORGOT_PASSWORD")}?
           </UnderlineLink>
         </SmallPrimaryParagraph>
-      </main>
+      </div>
     </LoginWrapper>
   );
 };

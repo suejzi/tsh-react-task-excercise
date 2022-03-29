@@ -14,6 +14,10 @@ const ProductListWrapper = styled.div`
   flex-wrap: wrap;
   margin-top: 40px;
 
+  @media only screen and (max-width: 768px) {
+    margin-top: 10px;
+  }
+
   & > div {
     margin: 16px 12px;
 
@@ -90,12 +94,7 @@ const ProductList: FC<ProductListProps> = ({ items, meta, links }) => {
   );
 
   return (
-    <OrganismWrapper
-      bgColor="gray"
-      style={{
-        height: "100%",
-      }}
-    >
+    <OrganismWrapper bgColor="gray">
       <SectionWrapper>
         <ProductListWrapper>{Products}</ProductListWrapper>
         <Pagination

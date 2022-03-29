@@ -10,7 +10,7 @@ export const PaginationContainer = styled.div`
   display: flex;
   align-items: center;
   justify-content: center;
-  margin-top: 34px;
+  margin: 34px 0 46px 0;
 
   .pageCard.active {
     color: #4460f7;

@@ -21,7 +21,9 @@ const HeaderProfile: FC<HeaderProfileProps> = ({ isLogged }) => {
   return (
     <HeaderProfileWrapper>
       {!isLogged ? (
-        <WhiteButton>{t("LOG_IN")}</WhiteButton>
+        <a href="/login" style={{ textDecoration: "unset" }}>
+          <WhiteButton>{t("LOG_IN")}</WhiteButton>
+        </a>
       ) : (
         <PopoverProfile />
       )}

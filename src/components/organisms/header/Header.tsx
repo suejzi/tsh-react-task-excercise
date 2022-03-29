@@ -22,9 +22,11 @@ const HeaderWrapper = styled.div`
 
   .header-input__wrapper {
     flex-direction: row;
+    display: flex;
+    align-items: center;
     margin-left: 105px;
     width: 100%;
-    div {
+    & > div {
       margin-right: 31px;
     }
 
@@ -37,11 +39,27 @@ const HeaderWrapper = styled.div`
       margin: 0;
       order: 1;
       flex: 1 0 100%;
+
+      & > div {
+        margin-right: 0;
+        width: 100%;
+        max-width: 100%;
+      }
+
+      & > div:first-child {
+        margin-top: 17px;
+      }
+
+      & > div:last-child {
+        margin-left: 13px;
+        margin-top: 17px;
+      }
     }
   }
 
   @media only screen and (max-width: 768px) {
     flex-wrap: wrap;
+    padding: 42px 0 28px 0;
 
     img {
       margin-right: auto;
