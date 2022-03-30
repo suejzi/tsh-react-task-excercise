@@ -3,6 +3,7 @@ import { useTranslation } from "react-i18next";
 import InputLoginWithText from "../../molecules/input/InputLoginWithText";
 import styled from "styled-components";
 import SiteLogo from "../../atoms/images/logo";
+import { FormControl } from "@mui/material";
 import {
   PrimaryHeading,
   SmallPrimaryParagraph,
@@ -55,6 +56,19 @@ const LoginWrapper = styled.div`
       left: 24px;
     }
   }
+
+  @media only screen and (max-width: 768px) {
+    max-width: unset;
+
+    .logo-section {
+      top: 41px;
+    }
+
+    .login-section {
+      justify-content: flex-start;
+      margin-top: 183px;
+    }
+  }
 `;
 
 const Login: FC = () => {
@@ -66,22 +80,24 @@ const Login: FC = () => {
         <SiteLogo />
       </div>
       <div className="login-section">
-        <PrimaryHeading>{t("LOGIN")}</PrimaryHeading>
-        <InputLoginWithText
-          inputLabel={"USERNAME"}
-          placeholder={"ENTER_USERNAME"}
-        />
-        <InputLoginWithText
-          inputLabel={"PASSWORD"}
-          placeholder={"ENTER_PASSWORD"}
-          type="password"
-        />
-        <BlueButton>{t("LOG_IN")}</BlueButton>
-        <SmallPrimaryParagraph>
-          <UnderlineLink href="https://www.google.com">
-            {t("FORGOT_PASSWORD")}?
-          </UnderlineLink>
-        </SmallPrimaryParagraph>
+        <FormControl>
+          <PrimaryHeading>{t("LOGIN")}</PrimaryHeading>
+          <InputLoginWithText
+            inputLabel={"USERNAME"}
+            placeholder={"ENTER_USERNAME"}
+          />
+          <InputLoginWithText
+            inputLabel={"PASSWORD"}
+            placeholder={"ENTER_PASSWORD"}
+            type="password"
+          />
+          <BlueButton>{t("LOG_IN")}</BlueButton>
+          <SmallPrimaryParagraph>
+            <UnderlineLink href="https://www.google.com">
+              {t("FORGOT_PASSWORD")}?
+            </UnderlineLink>
+          </SmallPrimaryParagraph>
+        </FormControl>
       </div>
     </LoginWrapper>
   );

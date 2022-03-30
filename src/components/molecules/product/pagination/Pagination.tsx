@@ -6,7 +6,12 @@ import {
   TextButton,
 } from "../../../../assets/styles/common/Buttons";
 
-export const PaginationContainer = styled.div`
+interface PaginationMetaLinks {
+  meta: {};
+  links: {};
+}
+
+export const PaginationContainer = styled.div<PaginationMetaLinks>`
   display: flex;
   align-items: center;
   justify-content: center;
@@ -23,7 +28,7 @@ export const PaginationNumbersWrapper = styled.div`
   margin: 0 23px;
 `;
 
-export const MorePaginationIconContainer = styled.div`
+export const IconWrapper = styled.div`
   display: flex;
   align-items: end;
   padding: 8px 6px;
@@ -33,12 +38,16 @@ interface PaginationProps {
   currentPage: number;
   pageCount: number;
   setCurrentPage: (prevPage: number) => void;
+  meta: {};
+  links: {};
 }
 
 const Pagination = ({
   currentPage,
   pageCount,
   setCurrentPage,
+  meta,
+  links,
 }: PaginationProps) => {
   const { t } = useTranslation();
   const pageCountArr = (numberOfPages: number) => {
@@ -104,13 +113,13 @@ const Pagination = ({
 
   const paginationDots = () =>
     pageCount >= 6 && (
-      <MorePaginationIconContainer>
-        <img src={Icons.paginationDots.default} />
-      </MorePaginationIconContainer>
+      <IconWrapper>
+        <img alt={t("ICON")} src={Icons.paginationDots.default} />
+      </IconWrapper>
     );
 
   return (
-    <PaginationContainer>
+    <PaginationContainer meta={meta} links={links}>
       <TextButton
         onClick={() => {
           setCurrentPage(1);

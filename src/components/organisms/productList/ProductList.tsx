@@ -1,12 +1,14 @@
 import React, { FC, useMemo, useState } from "react";
 import styled from "styled-components";
 import SingleProduct from "../../molecules/product/single";
-import { SingleProductProps } from "../../molecules/common/types";
+import { ProductListProps } from "../../../utils/interfaces/interface";
 import {
   SectionWrapper,
   OrganismWrapper,
 } from "../../../assets/styles/common/Layout";
 import Pagination from "../../molecules/product/pagination/Pagination";
+import EmptyProduct from "../../molecules/product/empty";
+import { isEmpty } from "../../../utils/helpers/isEmpty";
 
 const ProductListWrapper = styled.div`
   display: flex;
@@ -51,26 +53,12 @@ const ProductListWrapper = styled.div`
   }
 `;
 
-export interface ProductListProps {
-  items: Array<SingleProductProps>;
-  meta: {
-    totalItems: number;
-    itemCount: number;
-    itemsPerPage: number;
-    totalPages: number;
-    currentPage: number;
-  };
-  links: {
-    first: string;
-    previous: string;
-    next: string;
-    last: string;
-  };
-}
-
 const ProductList: FC<ProductListProps> = ({ items, meta, links }) => {
-  const [page, setPage] = useState(1);
-  const itemsPerPage = 8;
+  const [page, setPage] = useState<number>(1);
+  const itemsPerPage = window.matchMedia("only screen and (max-width: 768px)")
+    .matches
+    ? 4
+    : 8;
   const numberOfPages = Math.ceil(items.length / itemsPerPage);
 
   const Products = useMemo(
@@ -96,12 +84,20 @@ const ProductList: FC<ProductListProps> = ({ items, meta, links }) => {
   return (
     <OrganismWrapper bgColor="gray">
       <SectionWrapper>
-        <ProductListWrapper>{Products}</ProductListWrapper>
-        <Pagination
-          currentPage={page}
-          pageCount={numberOfPages}
-          setCurrentPage={setPage}
-        />
+        {!isEmpty(items) ? (
+          <>
+            <ProductListWrapper>{Products}</ProductListWrapper>
+            <Pagination
+              currentPage={page}
+              pageCount={numberOfPages}
+              setCurrentPage={setPage}
+              meta={meta}
+              links={links}
+            />
+          </>
+        ) : (
+          <EmptyProduct />
+        )}
       </SectionWrapper>
     </OrganismWrapper>
   );

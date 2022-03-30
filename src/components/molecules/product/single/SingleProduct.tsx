@@ -1,7 +1,7 @@
 import React, { FC, useState } from "react";
 import styled from "styled-components";
 import { useTranslation } from "react-i18next";
-import { SingleProductProps } from "../../common/types";
+import { SingleProductProps } from "../../../../utils/interfaces/interface";
 import ImageProduct from "../../../atoms/images/product/ImageProduct";
 import {
   SecondaryHeading,
@@ -81,7 +81,7 @@ const SingleProduct: FC<SingleProductProps> = ({
 
   const { t } = useTranslation();
   return (
-    <SingleProductWrapper key={id} data-filter={{ promo, active }}>
+    <SingleProductWrapper key={id}>
       {promo && <PromoParagraph>{t("PROMO")}</PromoParagraph>}
       <ImageProduct
         name={name}
@@ -101,19 +101,16 @@ const SingleProduct: FC<SingleProductProps> = ({
           </BlueButton>
         </div>
       </DescriptionWrapper>
-      <Modal
-        open={open}
-        onClose={handleClose}
-        aria-labelledby="modal-modal-title"
-        aria-describedby="modal-modal-description"
-      >
-        <SingleProductModalContent
-          description={description}
-          name={name}
-          image={image}
-          imageType="modal"
-          handleClose={handleClose}
-        />
+      <Modal open={open} onClose={handleClose}>
+        <>
+          <SingleProductModalContent
+            description={description}
+            name={name}
+            image={image}
+            imageType="modal"
+            handleClose={handleClose}
+          />
+        </>
       </Modal>
     </SingleProductWrapper>
   );

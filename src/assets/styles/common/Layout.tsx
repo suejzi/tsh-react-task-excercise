@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import { OrganismWrapperType } from "../../../components/atoms/common/types";
+import { OrganismWrapperType } from "../../../utils/interfaces/interface";
 import CircularProgress from "@mui/material/CircularProgress";
 
 export const TemplateWrapper = styled.div`

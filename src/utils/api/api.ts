@@ -19,8 +19,4 @@ async function getAllProducts() {
   return api(`${BASE_URL.products}`, "Products");
 }
 
-// async function getSingleProduct(id: string) {
-//   return api(`${BASE_URL.products}/${id}`, "Product");
-// }
-
 export { getAllProducts };

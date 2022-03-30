@@ -32,21 +32,29 @@ const Input = styled(TextField)`
     border: 1px solid #e0e2ea;
     border-radius: 8px;
   }
+  &.Mui-focused fieldset {
+    color: #4460f7;
+  }
 `;
 
 export interface InputSearchProps {
   placeholder: string | null;
+  handleSearchChange: Function;
 }
 
-const InputSearch: FC<InputSearchProps> = ({ placeholder }) => {
+const InputSearch: FC<InputSearchProps> = ({
+  placeholder,
+  handleSearchChange,
+}) => {
   const { t } = useTranslation();
 
   return (
     <Input
+      onChange={(event) => handleSearchChange(event)}
       InputProps={{
         endAdornment: (
           <InputAdornment position="end">
-            <img src={Icons.magnifyingGlass.default} />
+            <img alt={t("ICON")} src={Icons.magnifyingGlass.default} />
           </InputAdornment>
         ),
       }}

@@ -29,16 +29,23 @@ const ControlWrapper = styled(FormControlLabel)`
 
 export interface InputCheckboxProps {
   label: string;
+  filterName: "promo" | "active";
+  handleInputChange: Function;
 }
 
-const InputCheckbox: FC<InputCheckboxProps> = ({ label }) => {
+const InputCheckbox: FC<InputCheckboxProps> = ({
+  label,
+  filterName,
+  handleInputChange,
+}) => {
   const { t } = useTranslation();
 
   return (
     <ControlWrapper
-      onChange={(a) => console.log(a)}
+      onChange={(e) => handleInputChange(e)}
       control={<Input />}
       label={`${t(label)}`}
+      value={filterName}
     />
   );
 };

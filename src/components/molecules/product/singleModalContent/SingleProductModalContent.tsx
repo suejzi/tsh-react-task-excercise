@@ -1,5 +1,4 @@
 import React, { FC } from "react";
-import { useTranslation } from "react-i18next";
 import styled from "styled-components";
 import ImageProduct from "../../../atoms/images/product";
 import {
@@ -7,7 +6,7 @@ import {
   BigPrimaryParagraph,
 } from "../../../../assets/styles/common/Typography";
 import CloseIcon from "@mui/icons-material/Close";
-import { ImageProps } from "../../../atoms/common/types";
+import { ImageProps } from "../../../../utils/interfaces/interface";
 
 const ModalWrapper = styled.div`
   display: flex;
@@ -79,8 +78,6 @@ const SingleProductModalContent: FC<SingleModalProps> = ({
   image,
   handleClose,
 }) => {
-  const { t } = useTranslation();
-
   return (
     <ModalWrapper>
       <div className="upper-modal-col">

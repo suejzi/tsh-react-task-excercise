@@ -64,12 +64,23 @@ const HeaderWrapper = styled.div`
     img {
       margin-right: auto;
     }
+
+    > div:last-child {
+      margin-left: auto;
+    }
   }
 `;
 
-export interface HeaderProps extends HeaderProfileProps {}
+export interface HeaderProps extends HeaderProfileProps {
+  handleInputChange: Function;
+  handleSearchChange: Function;
+}
 
-const Header: FC<HeaderProps> = ({ isLogged }) => {
+const Header: FC<HeaderProps> = ({
+  isLogged,
+  handleInputChange,
+  handleSearchChange,
+}) => {
   const { t } = useTranslation();
 
   return (
@@ -78,10 +89,21 @@ const Header: FC<HeaderProps> = ({ isLogged }) => {
         <HeaderWrapper>
           <SiteLogo />
           <FormControl className="header-input__wrapper">
-            <InputSearch placeholder={t("SEARCH")} />
+            <InputSearch
+              placeholder={t("SEARCH")}
+              handleSearchChange={handleSearchChange}
+            />
             <FormGroup row>
-              <InputCheckbox label={t("ACTIVE")} />
-              <InputCheckbox label={t("PROMO")} />
+              <InputCheckbox
+                label={t("ACTIVE")}
+                filterName="active"
+                handleInputChange={handleInputChange}
+              />
+              <InputCheckbox
+                label={t("PROMO")}
+                filterName="promo"
+                handleInputChange={handleInputChange}
+              />
             </FormGroup>
           </FormControl>
           <HeaderProfile isLogged={isLogged} />

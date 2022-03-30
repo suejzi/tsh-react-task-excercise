@@ -1,6 +1,6 @@
 import React, { FC } from "react";
 import styled from "styled-components";
-import { ImageProps, ImageType } from "../../common/types";
+import { ImageProps, ImageType } from "../../../../utils/interfaces/interface";
 
 const Img = styled.img<ImageType>`
   object-fit: cover;

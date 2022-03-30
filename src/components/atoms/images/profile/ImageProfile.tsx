@@ -1,5 +1,4 @@
 import React, { FC } from "react";
-import { useTranslation } from "react-i18next";
 import styled from "styled-components";
 import { Pictures } from "../../../../assets/images";
 
@@ -10,8 +9,6 @@ const Img = styled.img`
 `;
 
 const ImageProfile: FC = () => {
-  const { t } = useTranslation();
-
   return <Img src={Pictures.sampleAvatar} />;
 };
 

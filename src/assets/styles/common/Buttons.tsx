@@ -32,7 +32,7 @@ export const WhiteButton = styled(Button)`
   background: #ffffff;
   border-radius: 4px;
   border: 1px solid #4460f7;
-  padding: 11px 0;
+  padding: 11px 22px;
   font-style: normal;
   font-weight: 600;
   font-size: 14px;
@@ -49,7 +49,6 @@ export const WhiteButton = styled(Button)`
   }
 
   &:disabled {
-    color: #9194a5;
     border: 1px solid #9194a5;
     color: #fff;
   }

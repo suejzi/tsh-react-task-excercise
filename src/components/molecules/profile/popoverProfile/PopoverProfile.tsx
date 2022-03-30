@@ -20,7 +20,7 @@ const PopoverContent = styled(Popover)`
   .MuiPopover-paper {
     padding: 20px 16px;
     background: #ffffff;
-    box-shadow: 0px 8px 32px rgba(17, 18, 20, 0.158514);
+    box-shadow: 0 8px 32px rgba(17, 18, 20, 0.158514);
     border-radius: 4px;
     width: 184px;
   }
@@ -28,9 +28,7 @@ const PopoverContent = styled(Popover)`
 
 const PopoverProfile: FC = ({}) => {
   const { t } = useTranslation();
-  const [anchorEl, setAnchorEl] = React.useState<HTMLButtonElement | null>(
-    null
-  );
+  const [anchorEl, setAnchorEl] = useState<HTMLButtonElement | null>(null);
 
   const handleClick = (event: React.MouseEvent<HTMLButtonElement>) => {
     setAnchorEl(event.currentTarget);

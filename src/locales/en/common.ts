@@ -10,9 +10,12 @@ export const common = {
   SEARCH: "Search",
   ACTIVE: "Active",
   PROMO: "Promo",
+  ICON: "Icon",
   SHOW_DETAILS: "Show details",
   UNAVAILABLE: "Unavailable",
   HEADING_NOTFOUND_PRODUCT: "Ooops... it's empty here",
+  PAGE_NOT_FOUND: "Ooops... page not found",
+  BACK_TO_PRODUCTS: "Back to products",
   PARAGRAPH_NOTFOUND_PRODUCT: "There are no products on the list",
 };
 

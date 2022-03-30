@@ -20,8 +20,16 @@ const EmptyProductWrapper = styled.div`
   background: #ffffff;
   border-radius: 8px;
 
+  img {
+    margin-bottom: 18px;
+  }
+
+  h2 {
+    margin-bottom: 10px;
+  }
+
   @media only screen and (max-width: 768px) {
-    margin: 0;
+    //margin: 0;
     max-width: 100%;
   }
 `;
@@ -32,7 +40,10 @@ const EmptyProduct: FC = () => {
   return (
     <SectionWrapper>
       <EmptyProductWrapper>
-        <img src={Icons.briefcase.default} />
+        <img
+          alt={t("HEADING_NOTFOUND_PRODUCT")}
+          src={Icons.briefcase.default}
+        />
         <SecondaryHeading>{t("HEADING_NOTFOUND_PRODUCT")}</SecondaryHeading>
         <SmallPrimaryParagraph>
           {t("PARAGRAPH_NOTFOUND_PRODUCT")}
