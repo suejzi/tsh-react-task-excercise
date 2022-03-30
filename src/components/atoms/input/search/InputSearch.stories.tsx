@@ -13,4 +13,5 @@ const Template: ComponentStory<typeof InputSearch> = (args) => (
 export const SearchInput = Template.bind({});
 SearchInput.args = {
   placeholder: "SEARCH",
+  handleSearchChange: () => null,
 };

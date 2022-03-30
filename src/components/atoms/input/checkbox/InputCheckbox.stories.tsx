@@ -13,4 +13,5 @@ const Template: ComponentStory<typeof InputCheckbox> = (args) => (
 export const Checkbox = Template.bind({});
 Checkbox.args = {
   label: "PROMO",
+  handleInputChange: () => null,
 };
