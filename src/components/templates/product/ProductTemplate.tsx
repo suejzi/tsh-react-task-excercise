@@ -7,6 +7,7 @@ import { TemplateWrapper } from "../../../assets/styles/common/Layout";
 const ProductTemplate: FC<ProductListProps> = ({ items, meta, links }) => {
   const [checkedInputs, setCheckedInputs] = useState<Array<any>>([]);
   const [searchTerm, setSearchTerm] = React.useState("");
+
   const handleSearchChange = (event: ChangeEvent<HTMLInputElement>) => {
     setSearchTerm(event.target.value);
   };
@@ -32,8 +33,6 @@ const ProductTemplate: FC<ProductListProps> = ({ items, meta, links }) => {
   const searchFilteredItems = checkboxFilteredItems.filter((item) =>
     item.name.includes(searchTerm)
   );
-
-  console.log(searchFilteredItems);
 
   return (
     <TemplateWrapper style={{ height: "100vh", backgroundColor: "#F0F1F5" }}>

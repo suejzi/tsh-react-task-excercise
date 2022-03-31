@@ -81,7 +81,7 @@ const SingleProduct: FC<SingleProductProps> = ({
 
   const { t } = useTranslation();
   return (
-    <SingleProductWrapper key={id}>
+    <SingleProductWrapper key={id} data-testid="cy-single-product">
       {promo && <PromoParagraph>{t("PROMO")}</PromoParagraph>}
       <ImageProduct
         name={name}
@@ -91,12 +91,18 @@ const SingleProduct: FC<SingleProductProps> = ({
       />
       <DescriptionWrapper>
         <div className="upper-col">
-          <SecondaryHeading>{name}</SecondaryHeading>
+          <SecondaryHeading data-testid="cy-single-product-name">
+            {name}
+          </SecondaryHeading>
           <SmallPrimaryParagraph>{description}</SmallPrimaryParagraph>
         </div>
         <div className="lower-col">
           <ProductRating rating={rating} />
-          <BlueButton disabled={!active} onClick={handleOpen}>
+          <BlueButton
+            data-testid="cy-single-product-button"
+            disabled={!active}
+            onClick={handleOpen}
+          >
             {active ? t("SHOW_DETAILS") : t("UNAVAILABLE")}
           </BlueButton>
         </div>

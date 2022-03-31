@@ -119,7 +119,7 @@ const Pagination = ({
     );
 
   return (
-    <PaginationContainer meta={meta} links={links}>
+    <PaginationContainer data-testid="cy-pagination" meta={meta} links={links}>
       <TextButton
         onClick={() => {
           setCurrentPage(1);
@@ -138,7 +138,7 @@ const Pagination = ({
         <>{renderPageRangeButtons()}</>
         {currentPage < pageCount - 2 && pageCount > 6 && (
           <>
-            {paginationDots()}
+            {currentPage !== pageCount - 3 && paginationDots()}
             {renderInitialButtons(pageCount - 2, pageCount)}
           </>
         )}

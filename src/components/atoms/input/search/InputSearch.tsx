@@ -50,6 +50,7 @@ const InputSearch: FC<InputSearchProps> = ({
 
   return (
     <Input
+      data-testid="cy-input-search"
       onChange={(event) => handleSearchChange(event)}
       InputProps={{
         endAdornment: (

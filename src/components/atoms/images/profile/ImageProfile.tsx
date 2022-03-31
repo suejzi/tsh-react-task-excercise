@@ -9,7 +9,7 @@ const Img = styled.img`
 `;
 
 const ImageProfile: FC = () => {
-  return <Img src={Pictures.sampleAvatar} />;
+  return <Img alt="Profile Image" src={Pictures.sampleAvatar} />;
 };
 
 export default ImageProfile;

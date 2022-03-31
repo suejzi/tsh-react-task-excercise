@@ -9,7 +9,7 @@ const Img = styled.img`
 `;
 
 const ImageLogin: FC = ({}) => {
-  return <Img src={Pictures.loginImg} />;
+  return <Img alt="login image" src={Pictures.loginImg} />;
 };
 
 export default ImageLogin;

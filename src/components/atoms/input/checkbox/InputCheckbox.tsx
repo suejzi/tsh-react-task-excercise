@@ -43,7 +43,7 @@ const InputCheckbox: FC<InputCheckboxProps> = ({
   return (
     <ControlWrapper
       onChange={(e) => handleInputChange(e)}
-      control={<Input />}
+      control={<Input data-testid={`cy-input-checkbox-${label}`} />}
       label={`${t(label)}`}
       value={filterName}
     />

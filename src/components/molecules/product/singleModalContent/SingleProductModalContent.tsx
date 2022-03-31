@@ -79,9 +79,9 @@ const SingleProductModalContent: FC<SingleModalProps> = ({
   handleClose,
 }) => {
   return (
-    <ModalWrapper>
+    <ModalWrapper data-testid="cy-single-product-modal">
       <div className="upper-modal-col">
-        <CloseIcon onClick={handleClose} />
+        <CloseIcon data-testid="cy-modal-close-icon" onClick={handleClose} />
         <ImageProduct name={name} image={image} imageType="modal" />
       </div>
       <div className="lower-modal-col">

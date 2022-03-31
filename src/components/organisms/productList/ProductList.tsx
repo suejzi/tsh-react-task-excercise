@@ -86,7 +86,9 @@ const ProductList: FC<ProductListProps> = ({ items, meta, links }) => {
       <SectionWrapper>
         {!isEmpty(items) ? (
           <>
-            <ProductListWrapper>{Products}</ProductListWrapper>
+            <ProductListWrapper data-testid="cy-product-list">
+              {Products}
+            </ProductListWrapper>
             <Pagination
               currentPage={page}
               pageCount={numberOfPages}

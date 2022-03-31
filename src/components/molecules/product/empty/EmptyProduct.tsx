@@ -39,7 +39,7 @@ const EmptyProduct: FC = () => {
 
   return (
     <SectionWrapper>
-      <EmptyProductWrapper>
+      <EmptyProductWrapper data-testid="cy-empty-product-list">
         <img
           alt={t("HEADING_NOTFOUND_PRODUCT")}
           src={Icons.briefcase.default}

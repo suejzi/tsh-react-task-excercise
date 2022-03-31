@@ -10,7 +10,7 @@ const Img = styled.img`
 const SiteLogo: FC = () => {
   return (
     <a href="/">
-      <Img src={Logo} />{" "}
+      <Img alt="Site logo" src={Logo} />
     </a>
   );
 };

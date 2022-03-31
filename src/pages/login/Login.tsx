@@ -1,7 +1,7 @@
-import React from "react";
+import React, { FC } from "react";
 
 import LoginTemplate from "../../components/templates/login/LoginTemplate";
 
-export const Login = () => {
+export const Login: FC = () => {
   return <LoginTemplate />;
 };

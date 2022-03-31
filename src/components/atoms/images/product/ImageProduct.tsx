@@ -16,7 +16,15 @@ const Img = styled.img<ImageType>`
 `;
 
 const ImageProduct: FC<ImageProps> = ({ name, image, imageType, active }) => {
-  return <Img src={image} alt={name} imageType={imageType} active={active} />;
+  return (
+    <Img
+      data-testid="cy-image-product"
+      src={image}
+      alt={name}
+      imageType={imageType}
+      active={active}
+    />
+  );
 };
 
 export default ImageProduct;
