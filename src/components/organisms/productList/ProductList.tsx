@@ -1,4 +1,4 @@
-import React, {FC, useEffect, useMemo, useState} from "react";
+import React, { FC, useEffect, useMemo, useState } from "react";
 import styled from "styled-components";
 import SingleProduct from "../../molecules/product/single";
 import { ProductListProps } from "../../../utils/interfaces/interface";
@@ -54,18 +54,24 @@ const ProductListWrapper = styled.div`
   }
 `;
 
-const ProductList: FC<ProductListProps> = ({ items, meta, links, termChange, setTermChange }) => {
+const ProductList: FC<ProductListProps> = ({
+  items,
+  meta,
+  links,
+  termChange,
+  setTermChange,
+}) => {
   const [page, setPage] = useState<number>(1);
-  const isMobile = useIsMobile()
-  const itemsPerPage = isMobile ? 4 : 8
+  const isMobile = useIsMobile();
+  const itemsPerPage = isMobile ? 4 : 8;
   const numberOfPages = Math.ceil(items.length / itemsPerPage);
 
   useEffect(() => {
     if (!isMobile || termChange) {
-      setPage(1)
-      setTermChange(false)
+      setPage(1);
+      setTermChange(false);
     }
-  }, [isMobile, setPage, termChange, setTermChange])
+  }, [isMobile, setPage, termChange, setTermChange]);
 
   const Products = useMemo(
     () =>

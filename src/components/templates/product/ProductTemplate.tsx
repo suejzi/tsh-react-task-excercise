@@ -10,12 +10,12 @@ const ProductTemplate: FC<ProductFetchedData> = ({ items, meta, links }) => {
   const [termChange, setTermChange] = useState<boolean>(false);
 
   const handleSearchChange = (event: ChangeEvent<HTMLInputElement>) => {
-    setTermChange(true)
+    setTermChange(true);
     setSearchTerm(event.target.value);
   };
 
   const handleInputChange = (event: ChangeEvent<HTMLInputElement>) => {
-    setTermChange(true)
+    setTermChange(true);
     if (event.target.checked) {
       setCheckedInputs([...checkedInputs, event.target.value]);
     } else {
@@ -44,11 +44,13 @@ const ProductTemplate: FC<ProductFetchedData> = ({ items, meta, links }) => {
         handleInputChange={handleInputChange}
         handleSearchChange={handleSearchChange}
       />
-      <ProductList items={searchFilteredItems}
-                   meta={meta}
-                   links={links}
-                   termChange={termChange}
-                   setTermChange={setTermChange} />
+      <ProductList
+        items={searchFilteredItems}
+        meta={meta}
+        links={links}
+        termChange={termChange}
+        setTermChange={setTermChange}
+      />
     </TemplateWrapper>
   );
 };

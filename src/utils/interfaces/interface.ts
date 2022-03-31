@@ -40,7 +40,7 @@ export interface ProductFetchedData {
   };
 }
 
-export interface ProductListProps extends ProductFetchedData{
-  termChange: boolean
-  setTermChange: React.Dispatch<React.SetStateAction<boolean>>
+export interface ProductListProps extends ProductFetchedData {
+  termChange: boolean;
+  setTermChange: React.Dispatch<React.SetStateAction<boolean>>;
 }
