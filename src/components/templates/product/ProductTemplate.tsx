@@ -1,18 +1,21 @@
 import React, { ChangeEvent, FC, useMemo, useState } from "react";
 import Header from "../../organisms/header";
 import ProductList from "../../organisms/productList";
-import { ProductListProps } from "../../../utils/interfaces/interface";
+import { ProductFetchedData } from "../../../utils/interfaces/interface";
 import { TemplateWrapper } from "../../../assets/styles/common/Layout";
 
-const ProductTemplate: FC<ProductListProps> = ({ items, meta, links }) => {
+const ProductTemplate: FC<ProductFetchedData> = ({ items, meta, links }) => {
   const [checkedInputs, setCheckedInputs] = useState<Array<any>>([]);
-  const [searchTerm, setSearchTerm] = React.useState("");
+  const [searchTerm, setSearchTerm] = useState<string>("");
+  const [termChange, setTermChange] = useState<boolean>(false);
 
   const handleSearchChange = (event: ChangeEvent<HTMLInputElement>) => {
+    setTermChange(true)
     setSearchTerm(event.target.value);
   };
 
   const handleInputChange = (event: ChangeEvent<HTMLInputElement>) => {
+    setTermChange(true)
     if (event.target.checked) {
       setCheckedInputs([...checkedInputs, event.target.value]);
     } else {
@@ -41,7 +44,11 @@ const ProductTemplate: FC<ProductListProps> = ({ items, meta, links }) => {
         handleInputChange={handleInputChange}
         handleSearchChange={handleSearchChange}
       />
-      <ProductList items={searchFilteredItems} meta={meta} links={links} />
+      <ProductList items={searchFilteredItems}
+                   meta={meta}
+                   links={links}
+                   termChange={termChange}
+                   setTermChange={setTermChange} />
     </TemplateWrapper>
   );
 };

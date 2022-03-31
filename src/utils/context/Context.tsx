@@ -1,11 +1,11 @@
 import React, { FC, useEffect } from "react";
 import * as apiClient from "../api/api";
 import { useProductsState } from "../hooks/useProductsState";
-import { ProductListProps } from "../interfaces/interface";
+import { ProductFetchedData } from "../interfaces/interface";
 
 interface IProductContext {
   fetchAllProducts: () => Promise<void>;
-  productsList: ProductListProps;
+  productsList: ProductFetchedData;
 }
 
 export const ProductContext = React.createContext<IProductContext>(

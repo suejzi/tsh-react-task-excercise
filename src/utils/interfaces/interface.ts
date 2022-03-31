@@ -1,3 +1,5 @@
+import React from "react";
+
 export interface ImageType {
   imageType?: "product" | "modal";
   active?: boolean;
@@ -12,11 +14,6 @@ export interface ImageProps extends ImageType {
   image: string;
 }
 
-export interface ICheckedInputs {
-  promo: undefined;
-  active: undefined;
-}
-
 export interface SingleProductProps extends ImageProps {
   id: number;
   description: string;
@@ -26,7 +23,7 @@ export interface SingleProductProps extends ImageProps {
   checkbox?: any;
 }
 
-export interface ProductListProps {
+export interface ProductFetchedData {
   items: Array<SingleProductProps>;
   meta: {
     totalItems: number;
@@ -41,4 +38,9 @@ export interface ProductListProps {
     next: string;
     last: string;
   };
+}
+
+export interface ProductListProps extends ProductFetchedData{
+  termChange: boolean
+  setTermChange: React.Dispatch<React.SetStateAction<boolean>>
 }
